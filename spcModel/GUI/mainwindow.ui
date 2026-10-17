@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1098</width>
+    <height>815</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_6">
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Info</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QGroupBox" name="groupBox_3">
+           <property name="title">
+            <string>Data Info</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <widget class="QPlainTextEdit" name="plainTextEdit_dataInfo">
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Model Info</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="0">
+             <widget class="QPlainTextEdit" name="plainTextEdit_modelInfo"/>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Sparameter">
+            <property name="text">
+             <string>S</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup_3</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Yparameter">
+            <property name="text">
+             <string>Y</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup_3</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_Zparameter">
+            <property name="text">
+             <string>Z</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup_3</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="text">
+             <string>X Axis Scale</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_xAxisLinear">
+            <property name="text">
+             <string>Linear</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_xAxislog">
+            <property name="text">
+             <string>Log</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_4">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="text">
+             <string>y Axis Scale</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_yAxisLinear">
+            <property name="text">
+             <string>Linear</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup_2</string>
+            </attribute>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="radioButton_yAxisLog">
+            <property name="text">
+             <string>Log</string>
+            </property>
+            <attribute name="buttonGroup">
+             <string notr="true">buttonGroup_2</string>
+            </attribute>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_7">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Data Type</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_DataType"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Data</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_data"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QLabel" name="label_4">
+            <property name="text">
+             <string>Model</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_model"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_9">
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Netlist</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox_netlist"/>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>Fitting Error:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_fittingError">
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidget_port"/>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPlainTextEdit" name="plainTextEdit_log"/>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1098</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuVectorFitting">
+    <property name="title">
+     <string>Model</string>
+    </property>
+    <widget class="QMenu" name="menuExport_2">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <addaction name="actionTouchstoneExportModel"/>
+    </widget>
+    <addaction name="actionVF"/>
+    <addaction name="actionCheckPassivityModel"/>
+    <addaction name="actionPassivity_Enforce"/>
+    <addaction name="menuExport_2"/>
+    <addaction name="actionDeleteModel"/>
+   </widget>
+   <widget class="QMenu" name="menuNetlist">
+    <property name="title">
+     <string>Netlist</string>
+    </property>
+    <addaction name="actionspice"/>
+    <addaction name="actionRun_Spice"/>
+   </widget>
+   <widget class="QMenu" name="menuData">
+    <property name="title">
+     <string>Data</string>
+    </property>
+    <widget class="QMenu" name="menuImport">
+     <property name="title">
+      <string>Import</string>
+     </property>
+     <addaction name="actionTouchstoneImport"/>
+    </widget>
+    <widget class="QMenu" name="menuCheck">
+     <property name="title">
+      <string>Check</string>
+     </property>
+     <addaction name="actionCheckPassivityData"/>
+     <addaction name="actionCheckCausalityData"/>
+    </widget>
+    <widget class="QMenu" name="menuExport">
+     <property name="title">
+      <string>Export</string>
+     </property>
+     <addaction name="actionTouchstoneExportData"/>
+    </widget>
+    <addaction name="menuImport"/>
+    <addaction name="menuCheck"/>
+    <addaction name="menuExport"/>
+    <addaction name="actionDelete"/>
+   </widget>
+   <widget class="QMenu" name="menuStop">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionStop"/>
+   </widget>
+   <addaction name="menuData"/>
+   <addaction name="menuVectorFitting"/>
+   <addaction name="menuNetlist"/>
+   <addaction name="menuStop"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="actionVF">
+   <property name="text">
+    <string>Build</string>
+   </property>
+  </action>
+  <action name="actionCheckPassivityModel">
+   <property name="text">
+    <string>Passivity Test</string>
+   </property>
+  </action>
+  <action name="actionPassivity_Enforce">
+   <property name="text">
+    <string>Passivity Enforce</string>
+   </property>
+  </action>
+  <action name="actionspice">
+   <property name="text">
+    <string>spice</string>
+   </property>
+  </action>
+  <action name="actionTounchStone">
+   <property name="text">
+    <string>TounchStone</string>
+   </property>
+  </action>
+  <action name="actionTouchstoneImport">
+   <property name="text">
+    <string>Touchstone</string>
+   </property>
+  </action>
+  <action name="actionCheckPassivityData">
+   <property name="text">
+    <string>Passivity</string>
+   </property>
+  </action>
+  <action name="actionCheckCausalityData">
+   <property name="text">
+    <string>Causality</string>
+   </property>
+  </action>
+  <action name="actionTouchstoneExportData">
+   <property name="text">
+    <string>Touchstone</string>
+   </property>
+  </action>
+  <action name="actionTouchstoneExportModel">
+   <property name="text">
+    <string>Touchstone</string>
+   </property>
+  </action>
+  <action name="actionDelete">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionDeleteModel">
+   <property name="text">
+    <string>Delete</string>
+   </property>
+  </action>
+  <action name="actionRun_Spice">
+   <property name="text">
+    <string>Run Spice</string>
+   </property>
+  </action>
+  <action name="actionstop">
+   <property name="text">
+    <string>stop</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
+  <buttongroup name="buttonGroup"/>
+  <buttongroup name="buttonGroup_3"/>
+ </buttongroups>
+</ui>

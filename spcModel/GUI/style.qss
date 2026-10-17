@@ -1,0 +1,437 @@
+/* 在全局的 .qss 文件中定义基础按钮样式，实现“呼吸感” */
+QPushButton {
+    background-color: #0078d4; /* 微软蓝，专业信任感 */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    /* 充足的留白，提升可读性与触摸友好度 */
+    padding: 8px 16px;
+    /* 平滑的动画过渡，告别生硬切换 */
+    transition: all 0.2s ease-in-out;
+}
+
+/* 悬停时轻微上浮，给予“可按压”的暗示 */
+QPushButton:hover {
+    background-color: #106ebe;
+    transform: translateY(-2px);
+}
+
+/* 点击时模拟物理世界的“下沉”效果，反馈干脆利落 */
+QPushButton:pressed {
+    background-color: #005a9e;
+    transform: translateY(0);
+}
+
+
+QGroupBox {
+    border: 1px solid #e0e0e0;        /* 浅灰色边框 */
+    border-radius: 6px;              /* 小圆角 */
+    margin-top: 12px;                /* 为标题留出空间 */
+    padding-top: 8px;                /* 内边距，避免内容紧贴边框 */
+    font-size: 12px;                 /* 标题字号非继承时需单独设置 */
+}
+
+/*
+QGroupBox::title {
+    subcontrol-origin: margin;       /* 标题位置基于margin区域 */
+    subcontrol-position: top left;   /* 标题在左上角 */
+    left: 16px;                      /* 左侧缩进，与内容对齐 */
+    padding: 0 6px;                  /* 标题文字两侧的留白 */
+    color: #666666;                  /* 标题文字灰色，降低视觉权重 */
+    font-weight: 500;                /* 中等字重，不粗不细 */
+}
+*/
+
+
+/* ========================= */
+/* 全局样式与设计令牌         */
+/* ========================= */
+
+* {
+    /* 颜色系统 - 浅色主题 */
+    --primary-color: #0078d4;      /* 品牌蓝，用于焦点、选中、主按钮 */
+    --success-color: #107c10;      /* 成功绿，较少用 */
+    --warning-color: #ff8c00;      /* 警告橙 */
+    --error-color: #d13438;        /* 错误红 */
+
+    --bg-main: #f0f2f5;            /* 主窗口背景色 */
+    --bg-surface: #ffffff;         /* 表面层（卡片、输入框、表格）背景 */
+    --bg-hover: #f5f5f5;           /* 悬停背景 */
+    --bg-selected: #e3f2fd;        /* 选中背景（浅蓝） */
+
+    --border-light: #e0e0e0;       /* 轻边框 */
+    --border-default: #d0d0d0;     /* 常规边框 */
+    --border-focus: var(--primary-color); /* 焦点边框（品牌色） */
+
+    --text-primary: #333333;       /* 主要文字 */
+    --text-secondary: #666666;     /* 次要文字 */
+    --text-placeholder: #999999;    /* 占位符文字 */
+    --text-disabled: #b0b0b0;      /* 禁用文字 */
+
+    /* 间距与圆角 (8px网格) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+
+    /* 阴影 */
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-focus: 0 0 0 3px rgba(0,120,212,0.2);
+
+    /* 过渡动画 */
+    --transition: 0.2s ease;
+}
+
+/* ========================= */
+/* 全局控件基础设置          */
+/* ========================= */
+
+QWidget {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+    font-size: 13px;
+}
+
+/* ========================= */
+/* QMainWindow               */
+/* ========================= */
+
+QMainWindow {
+    background-color: var(--bg-main);
+}
+
+/* 中央区域可添加轻微内边距（通过 centralWidget 的 layout 实现，QSS 不可直接设置） */
+
+/* ========================= */
+/* QLabel                    */
+/* ========================= */
+
+QLabel {
+    color: var(--text-primary);
+    background-color: transparent;
+    padding: var(--spacing-xs) 0;
+}
+
+QLabel:disabled {
+    color: var(--text-disabled);
+}
+
+/* 标题级别 */
+QLabel[headingLevel="1"] {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+QLabel[headingLevel="2"] {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+QLabel[headingLevel="3"] {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* 提示信息 */
+QLabel[type="info"] {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+/* ========================= */
+/* QLineEdit & QPlainTextEdit */
+/* ========================= */
+
+QLineEdit, QPlainTextEdit {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    selection-background-color: var(--primary-color);
+    selection-color: white;
+    transition: var(--transition);
+}
+
+QLineEdit:hover, QPlainTextEdit:hover {
+    border-color: var(--border-light);
+}
+
+QLineEdit:focus, QPlainTextEdit:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: var(--shadow-focus);
+}
+
+QLineEdit:disabled, QPlainTextEdit:disabled {
+    background-color: var(--bg-hover);
+    color: var(--text-disabled);
+    border-color: var(--border-light);
+}
+
+/* 占位符文本（Qt 5.12+） */
+QLineEdit::placeholder, QPlainTextEdit::placeholder {
+    color: var(--text-placeholder);
+    font-style: italic;
+}
+
+/* ========================= */
+/* QComboBox                 */
+/* ========================= */
+
+QComboBox {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 20px;
+    transition: var(--transition);
+}
+
+QComboBox:hover {
+    border-color: var(--border-light);
+}
+
+QComboBox:focus, QComboBox:open {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-focus);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: right center;
+    width: 28px;
+    border-left: 1px solid var(--border-default);
+}
+
+QComboBox::down-arrow {
+    width: 12px;
+    height: 12px;
+    image: url(":/icons/down-arrow.svg"); /* 需要实际图标路径，或使用unicode符号替代 */
+}
+
+/* 下拉列表 */
+QComboBox QAbstractItemView {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    selection-background-color: var(--bg-selected);
+    selection-color: var(--text-primary);
+    outline: none;
+    padding: var(--spacing-xs);
+}
+
+/* ========================= */
+/* QSpinBox                  */
+/* ========================= */
+
+QSpinBox {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    min-height: 20px;
+    transition: var(--transition);
+}
+
+QSpinBox:hover {
+    border-color: var(--border-light);
+}
+
+QSpinBox:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-focus);
+}
+
+QSpinBox::up-button, QSpinBox::down-button {
+    width: 20px;
+    subcontrol-origin: border;
+    border-left: 1px solid var(--border-default);
+    background-color: var(--bg-surface);
+}
+
+QSpinBox::up-button:hover, QSpinBox::down-button:hover {
+    background-color: var(--bg-hover);
+}
+
+QSpinBox::up-arrow {
+    image: url(":/icons/up-arrow.svg");
+}
+
+QSpinBox::down-arrow {
+    image: url(":/icons/down-arrow.svg");
+}
+
+/* ========================= */
+/* QCheckBox & QRadioButton  */
+/* ========================= */
+
+QCheckBox, QRadioButton {
+    spacing: var(--spacing-sm);
+    color: var(--text-primary);
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    transition: var(--transition);
+}
+
+QRadioButton::indicator {
+    border-radius: 9px; /* 圆形 */
+}
+
+QCheckBox::indicator:hover, QRadioButton::indicator:hover {
+    border-color: var(--primary-color);
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 勾选标记 - 使用 unicode 或图片，这里使用伪元素模拟需要额外处理，简化使用背景图 */
+QCheckBox::indicator:checked {
+    image: url(":/icons/check-white.svg");
+}
+
+QRadioButton::indicator:checked {
+    image: url(":/icons/radio-checked.svg");
+}
+
+QCheckBox::indicator:disabled, QRadioButton::indicator:disabled {
+    background-color: var(--bg-hover);
+    border-color: var(--border-light);
+}
+
+QCheckBox:disabled, QRadioButton:disabled {
+    color: var(--text-disabled);
+}
+
+/* ========================= */
+/* QTableWidget              */
+/* ========================= */
+
+QTableWidget {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    gridline-color: var(--border-light);
+    selection-background-color: var(--bg-selected);
+    selection-color: var(--text-primary);
+    alternate-background-color: var(--bg-hover); /* 交替行颜色 */
+    outline: none;
+}
+
+QTableWidget::item {
+    padding: var(--spacing-sm);
+}
+
+QTableWidget::item:hover {
+    background-color: rgba(0, 120, 212, 0.05);
+}
+
+QTableWidget::item:selected {
+    background-color: var(--bg-selected);
+}
+
+/* 表头 */
+QHeaderView::section {
+    background-color: var(--bg-hover);
+    border: none;
+    border-bottom: 1px solid var(--border-default);
+    border-right: 1px solid var(--border-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+QHeaderView::section:last {
+    border-right: none;
+}
+
+/* 表格滚动条（可选） */
+QTableWidget QScrollBar:vertical {
+    background-color: var(--bg-surface);
+    width: 14px;
+    border-radius: 7px;
+}
+
+QTableWidget QScrollBar::handle:vertical {
+    background-color: #c0c0c0;
+    border-radius: 7px;
+    min-height: 30px;
+}
+
+/* ========================= */
+/* QMenuBar & QMenu          */
+/* ========================= */
+
+QMenuBar {
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-light);
+    padding: var(--spacing-xs) 0;
+}
+
+QMenuBar::item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-sm);
+}
+
+QMenuBar::item:selected {
+    background-color: var(--bg-hover);
+}
+
+QMenuBar::item:pressed {
+    background-color: var(--bg-selected);
+}
+
+QMenu {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    margin: 2px;
+    box-shadow: var(--shadow);
+}
+
+QMenu::item {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-sm);
+}
+
+QMenu::item:selected {
+    background-color: var(--bg-selected);
+}
+
+QMenu::separator {
+    height: 1px;
+    background-color: var(--border-light);
+    margin: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* ========================= */
+/* QButtonGroup              */
+/* ========================= */
+
+/* QButtonGroup 本身不是可见控件，无需样式。但若需要统一一组按钮的外框，可使用 QGroupBox 或自定义框架 */
+
+/* ========================= */
+/* QChartView (Qt Charts)    */
+/* ========================= */
+
+/* QChartView 的样式主要通过 QChart 的 API 设置，QSS 只能设置背景等基础属性 */
+QChartView {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+}
+
+/* 若要设置图表的主题，建议在代码中调用 QChart::setTheme()，或通过 QChart 的样式表子控制（支持有限） */
+

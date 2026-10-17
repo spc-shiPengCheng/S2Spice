@@ -1,0 +1,16 @@
+﻿install Package/spcModel.iss
+install Package/exe
+spcModel/build
+spcModel/Library/eigen-5.0.0.zip
+spcModel/Library/fftw-3.3.11.tar.gz
+spcModel/Library/fftw-3.3.5-dll64.zip
+spcModel/Library/ngspice_cb (1).7z
+spcModel/Library/ngspice-46_64.7z
+spcModel/Library/ngspice-46_dll_64.7z
+spcModel/Library/QCustomPlot.tar.gz
+spcModel/Library/ngspice-46_dll_64
+spcModel/Library/ngspice-46_64
+spcModel/Library/ngspice_cb (1)
+spcModel/Library/fftw-3.3.5-dll64
+spcModel/Library/QCustomPlot
+spcModel/Library/eigen-5.0.0
